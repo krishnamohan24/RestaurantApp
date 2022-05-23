@@ -1,0 +1,41 @@
+.navbar ul{
+    float:right;
+    list-style-type:none;
+    margin:20px;
+    
+    
+}
+.navbar{
+    height:100px;
+ 
+  
+}
+.navbar ul li {
+   float:left;
+    padding:10px;
+    background-color: black;
+    margin:5px;
+  
+}
+a{
+    color:white;
+    text-decoration: none;
+}
+
+a:link {
+    color:white;
+  }
+  
+ 
+  
+  
+  /* mouse over link */
+  a:hover {
+    color:cyan;
+  }
+  
+  /* selected link */
+  a:active {
+    color: yellow;
+  }
+

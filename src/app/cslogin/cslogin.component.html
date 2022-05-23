@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div class="all" *ngIf="login">
+  <h1 id="heading">Customer Login</h1>
+    <form id="formtag">
+     <div class="form-group">
+       <label for="exampleInputEmail1" style="color: azure;">Email address</label>
+       <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="cemail" [(ngModel)]="cemail">
+       <small id="emailHelp"  style="color:cornsilk;" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    
+    </div>
+     <div class="form-group">
+       <label style="color: azure;" for="exampleInputPassword1">Password</label>
+       <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="cpass" [(ngModel)]="cpass">
+     </div>
+     <div class="form-check">
+       <input type="checkbox" class="form-check-input" id="exampleCheck1">
+       <label style="color: azure;" class="form-check-label" for="exampleCheck1">Check me out</label>
+     </div>
+     
+     <button type="button" class="btn btn-primary" [routerLink]=" myvar ?['/cslogin/csportal']:['/cslogin']" (click)="submitfun()">Submit</button>
+     <button type="button" class="btn btn-primary" (click)="signupfun()">Sign up</button>
+    </form></div>
+
+<div class="top"><h1 id="heading" *ngIf="signup">Signup</h1>
+      <form id="formtag" *ngIf="signup" (ngSubmit)="signupButton()">
+          <div class="form-group">
+            <label for="formGroupExampleInput">Name</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter Name" [(ngModel)]="sname" name="sname"> 
+          </div>
+          <div class="form-group">
+            <label for="formGroupExampleInput2">Email Id</label>
+            <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Enter EmailId" [(ngModel)]="semail" name="semail">
+          </div>
+          <div class="form-group">
+              <label for="formGroupExampleInput2">Password</label>
+              <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Enter Password" [(ngModel)]="spass1" name="spass1">
+          </div>
+          <div class="form-group">
+              <label for="formGroupExampleInput2">Re-Enter Password</label>
+              <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Re-Enter Password" [(ngModel)]="spass2" name="spass2">
+          </div>
+          <button type="submit" id="subbtn" class="btn btn-primary" >Submit</button>
+          
+        </form></div>

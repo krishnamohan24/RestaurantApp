@@ -1,0 +1,23 @@
+#formtag{
+    padding :2px;
+    margin:4% 40% 2% 40%;
+    align-items: center;
+    
+}
+h1{
+    color:darkgray;
+    text-align: center;
+}
+.btn{
+    margin:20px;
+    align-items: center;
+}
+#heading{
+    color:white;
+}
+.all{
+    backdrop-filter: blur(10px);
+    margin-left:300px;
+    margin-right:300px;
+
+}

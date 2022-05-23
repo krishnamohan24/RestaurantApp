@@ -1,0 +1,103 @@
+
+<div class="main">
+<div class="order"><h1 class="item">Order Items</h1></div>
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <form class="d-flex" role="search" style="position:relative;">
+      <input class="form-control me-2" type="search" placeholder="Search" name="search" [(ngModel)]="search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit" (click)="show()">Search</button>
+      <button class="btn btn-outline-success" id="cart" type="submit" (click)="openPopup()">MyCart</button>
+      <button class="btn btn-outline-success" style="background-color:cyan" type="submit" [routerLink]="['/cslogin']">LogOut</button>
+    </form>
+  </div>
+</nav>
+
+ 
+
+<section class="container" *ngIf="condition">
+    <div class="bg" >
+    <div class="repeat" *ngFor="let x of records">
+        <div class="section">
+            <img src={{x.link}} class="img">
+            <h1>{{x.name}}</h1>
+            <h3>Rating:{{x.rating}}</h3>
+            <h3>Price:<span class="material-symbols-outlined">
+                currency_rupee
+                </span><style>
+                .material-symbols-outlined {
+                  font-variation-settings:
+                  'FILL' 0,
+                  'wght' 500,
+                  'GRAD' 10,
+                  'opsz' 48
+                }
+                </style>{{x.price}}</h3>
+                <button type="button" id="fbtn" class="btn btn-primary"  (click)="cart(x.id)" >Add To Cart</button>
+        </div>
+    </div>
+    </div>
+  </section>    
+<section class="container"  *ngIf="condition1">  
+    <div class="bg"  >
+      <div *ngFor="let x of records" >
+      <div class="repeat" *ngIf="x.id==store[0]">
+          <div class="section">
+              <img src={{x.link}} class="img">
+              <h1>{{x.name}}</h1>
+              <h3>Rating:{{x.rating}}</h3>
+              <h3>Price:<span class="material-symbols-outlined">
+                  currency_rupee
+                  </span><style>
+                  .material-symbols-outlined {
+                    font-variation-settings:
+                    'FILL' 0,
+                    'wght' 500,
+                    'GRAD' 10,
+                    'opsz' 48
+                  }
+                  </style>{{x.price}}</h3>
+              <button type="button" class="btn btn-primary"  (click)="cart(x.id)">Add To Cart</button>
+          </div>
+      </div>
+    </div>
+      </div>
+</section>
+</div>
+
+<div
+  class="modal"
+  tabindex="-1"
+  role="dialog"
+  [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title">MY CART</h1>
+      </div>
+      <div class="modal-body">
+        <p *ngIf="op">{{msg}}</p>
+        <div class="order" *ngIf="!op">
+          <div *ngFor="let g of orderList">
+            <div *ngFor="let f of records">
+                <div class="finallist" *ngIf="f.id===g">
+                  <h2>Item Name:{{f.name}}</h2>
+                  <div class="s"> 
+                  <button id="h" (click)="sub(f)">-</button>&nbsp;<h3 id="count">Quantity :{{f.count}}</h3>&nbsp;<button id="h" (click)="add(f)">+</button></div>
+                  <h3>price:{{f.price}}</h3>
+                  
+                </div>
+
+            </div>
+         </div>
+         <h1>Total Bill:{{cost}}</h1>
+     </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" 
+                (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+.welnote .note{
+    font-family: 'Smooch', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:300px;
+    font-size:60px;
+    color:white;
+    margin-left:0px;
+}
+.text .innertext{
+    font-family: 'Permanent Marker', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:0px;
+    color:gold;
+    margin:30px;
+
+   
+}
+

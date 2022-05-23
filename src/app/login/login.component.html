@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div class="all"><h1 id="heading">Admin Login</h1>
+<form id="formtag">
+ <div class="form-group">
+   <label for="exampleInputEmail1" style="color: azure;">Email address</label>
+   <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="inputvalue" placeholder="Enter email" [(ngModel)]="inputvalue">
+   
+
+  
+ </div>
+ <div class="form-group">
+   <label style="color: azure;" for="exampleInputPassword1">Password</label>
+   <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="pass" [(ngModel)]="pass">
+ </div>
+ 
+ 
+ <button type="button" class="btn btn-primary" [routerLink]="myvar ? ['/login/portal']:['/login']" (click)="submitfun()">Submit</button>
+
+</form></div>

@@ -1,0 +1,17 @@
+.btn{
+    margin-left: 50px;
+    margin-top:10px;
+}
+.txt{
+    text-align: center;
+    margin:20px;
+    padding:5px;
+    height:0px;
+}
+.txt .itxt{
+    color:white;
+}
+.btn1{
+    float: right;
+    margin-right:30px;
+}
