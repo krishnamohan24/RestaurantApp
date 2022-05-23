@@ -2,11 +2,80 @@
     <h1 class="itxt">Admin page</h1>
 </div>
 <div class="btn">
-    <button type="button" class="btn btn-primary" [routerLink]="['/portal/input']">Add Item</button>
+    <button type="button" id="btn1" class="btn btn-primary" (click)="additem()">Add Item</button>
 </div>
 <div class="btn1">
-    <button type="button" class="btn btn-primary" [routerLink]="['/login']">Log Out</button>
+    <button type="button" id="btn1"class="btn btn-primary" [routerLink]="['/login']">Log Out</button>
 </div>
 
 <div class="section"></div>
+
+
+
+<div class="all" *ngIf="show"><h1 id="heading">Add Item</h1>
+    <form id="formtag" *ngIf="show">
+     <div class="form-group">
+       <label for="exampleInputEmail1" style="color: azure;">Item Name</label>
+       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="Name" placeholder="Enter Name" [(ngModel)]="Name" >
+    </div>
+     <div class="form-group">
+       <label style="color: azure;" for="exampleInputPassword1">Item cost</label>
+       <input type="number" class="form-control" id="exampleInputPassword1" name="cost" placeholder="Item Cost" [(ngModel)]="Cost" >
+     </div>
+     <div class="form-group">
+        <label style="color: azure;" for="exampleInputPassword1">Item Image Link</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" name="link" placeholder="Item Image Link" [(ngModel)]="Link" >
+      </div>
+      <div class="form-group">
+        <label style="color: azure;" for="exampleInputPassword1">Rating</label>
+        <input type="number" class="form-control" id="exampleInputPassword1" name="rating" placeholder="Rating" [(ngModel)]="Rating" >
+      </div>
+     
+     <button type="button" class="btn btn-primary" (click)="onsubmit()" [routerLink]="['/login/portal']">Submit</button>
+     
+    </form>
+</div>
+    
+
+
+<div *ngIf="show1" class="data">
+    <div class="innerdata">
+    <div *ngFor="let n of store" class="repeat">
+        <div class="main">
+            <div>
+                <div class="d-flex">
+                <img src="{{n.link}}" class="imgdata"></div>
+                <h1 id="itemname">Item Name :{{n.name}}</h1>
+                <h1 id="itemname">Item Cost :{{n.cost}}</h1>
+                <button type="button" id="edit" class="btn btn-primary" (click)="edit()">Edit</button>
+                <button type="button" id="edit" class="btn btn-primary" (click)="deleting()"> Delete</button>
+            </div>
+        </div>
+        <form id="formtag" *ngIf="editt">
+            <div class="form-group">
+              <label for="exampleInputEmail1" style="color: azure;">Item Name</label>
+              <input type="text" class="form-control" id="exampleInputEmail1"  name="Name" placeholder="Enter Name" [(ngModel)]="Name" >
+           </div>
+            <div class="form-group">
+              <label style="color: azure;" for="exampleInputPassword1">Item cost</label>
+              <input type="number" class="form-control" id="exampleInputPassword1" name="cost" placeholder="Item Cost" [(ngModel)]="Cost" >
+            </div>
+            <div class="form-group">
+               <label style="color: azure;" for="exampleInputPassword1">Item Image Link</label>
+               <input type="text" class="form-control" id="exampleInputPassword1" name="link" placeholder="Item Image Link" [(ngModel)]="Link" >
+             </div>
+             <div class="form-group">
+               <label style="color: azure;" for="exampleInputPassword1">Rating</label>
+               <input type="number" class="form-control" id="exampleInputPassword1" name="rating" placeholder="Rating" [(ngModel)]="Rating" >
+             </div>
+                <button type="button" class="btn btn-primary" (click)="submiting(n)">Submit</button>
+            
+           </form>
+
+    </div>
+    </div>
+</div>
+
+
+
 

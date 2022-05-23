@@ -1,4 +1,4 @@
-.btn{
+#btn1{
     margin-left: 50px;
     margin-top:10px;
 }
@@ -14,4 +14,67 @@
 .btn1{
     float: right;
     margin-right:30px;
+}
+
+
+#formtag{
+    padding :2px;
+    margin:4% 40% 2% 40%;
+    align-items: center;
+    
+}
+
+.btn{
+    margin:20px;
+    align-items: center;
+}
+#heading{
+    color:white;
+    text-align: center;
+}
+.all{
+    backdrop-filter: blur(10px);
+    margin-left:300px;
+    margin-right:300px;
+
+}
+.innerdata
+{
+    background-color: bisque;
+    margin-left:80px;
+    width:100%;
+    
+}
+
+.main{
+    background-color:goldenrod;
+    padding:5px;
+}
+.repeat{
+    width:270px;
+    float:left;
+    padding:5px;
+}
+.imgdata
+{
+    height:220px;
+    width:250px;
+    margin-left:2px;
+    margin-top:3px;
+    margin-bottom: 5px;
+    
+}
+#itemname{
+    color:black;
+    margin-left:5px;
+    font-family: 'Grape Nuts', cursive;
+
+}
+.d-flex{
+    display:flex;
+}
+#edit{
+    height:50px;
+    padding:15px;
+    margin-left:30px;
 }
